@@ -6,6 +6,9 @@ We will doing with JavaScript.
 `nodejs`
 `jest`
 
+# Initial program
+`npm install`
+
 # To run
 
 # Bowling Rules
@@ -18,10 +21,19 @@ A strike is when the player knocks down all 10 pins on his first roll. The frame
 In the tenth frame a player who rolls a spare or strike is allowed to roll the extra balls to complete the frame. However no more than three balls can be rolled in tenth frame.
 
 # Requirements
-Write a class Game that has two methods
+1. Write a `class Game` that has two methods
+2. `void roll(int)` is called each time the player rolls a ball. The argument is the number of pins knocked down.
+3. `int score()` returns the total score for that game.
 
-1. `void roll(int)` is called each time the player rolls a ball. The argument is the number of pins knocked down.
-2. `int score()` returns the total score for that game.
+# Examples
+```
+-/- | -/- | -/- | -/- | -/- | -/- | -/- | -/- | -/- | -/-/- = 0
+1/1 | 1/1 | 1/1 | 1/1 | 1/1 | 1/1 | 1/1 | 1/1 | 1/1 | 1/1/- = 20
+4/6 | 9/- | -/- | -/- | -/- | -/- | -/- | -/- | -/- | -/-/- = 28
+10  | 1/2 | -/- | -/- | -/- | -/- | -/- | -/- | -/- | -/-/- = 15
+6/4 | 10  | 8/1 | 10  | 7/0 | 10  | 7/2 | 10  | 10  | 10/7/1 = 175
+10  | 10  | 10  | 10  | 10  | 10  | 10  | 10  | 10  | 10/10/10  = 300
+```
 
 # References
 [kata-log.rocks](https://kata-log.rocks/bowling-game-kata)
