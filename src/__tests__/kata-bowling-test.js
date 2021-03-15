@@ -73,18 +73,7 @@ it ('should return the correct score when strike in frame 10', () => {
 });
 
 it ('should return the correct score when a strike 12 times', () => {
-    game.roll(10);
-    game.roll(10);
-    game.roll(10);
-    game.roll(10);
-    game.roll(10);
-    game.roll(10);
-    game.roll(10);
-    game.roll(10);
-    game.roll(10);
-    game.roll(10);
-    game.roll(10);
-    game.roll(10);
+    rollBall(10, 12);
     expect(game.score).toEqual(300);
 });
 
