@@ -37,7 +37,7 @@ In the tenth frame a player who rolls a spare or strike is allowed to roll the e
 10  | 10  | 10  | 10  | 10  | 10  | 10  | 10  | 10  | 10/10/10  = 300
 ```
 
-![alt text](https://github.com/iamgique/kata-bowling-js/public/images/bowling-score.png "Bowling score example")
+![alt text](https://github.com/iamgique/kata-bowling-js/blob/main/public/images/bowling-score.png?raw=true "Bowling score example")
 
 # References
 [kata-log.rocks](https://kata-log.rocks/bowling-game-kata)
