@@ -6,10 +6,8 @@ We will doing with JavaScript.
 `nodejs`
 `jest`
 
-# Initial program
+# Initial and Test
 `npm install`
-
-# To test
 `npm test`
 
 # Bowling Rules
