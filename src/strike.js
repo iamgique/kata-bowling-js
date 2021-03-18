@@ -1,4 +1,4 @@
-class Spare {
+class Strike {
 
     constructor() {
         this.rolls = [];
@@ -13,6 +13,12 @@ class Spare {
         let rollIndex = 0;
 
         for (let frame = 0; frame < 10; frame++) {
+            if(this.isStrike(rollIndex)) {
+                score += this.bonusStrike(rollIndex);
+                rollIndex += 1;
+                continue;
+            }
+
             const frameScore = this.rolls[rollIndex] + this.rolls[rollIndex + 1];
             if(this.isSpare(frameScore)) {
                 score += this.bonusSpare(rollIndex);
@@ -31,6 +37,14 @@ class Spare {
     bonusSpare(rollIndex) {
         return 10 + this.rolls[rollIndex + 2];
     }
+
+    isStrike(rollIndex) {
+        return this.rolls[rollIndex] === 10;
+    }
+
+    bonusStrike(rollIndex) {
+        return 10 + this.rolls[rollIndex + 1] + this.rolls[rollIndex + 2];
+    }
 }
 
-module.exports = Spare;
+module.exports = Strike;
