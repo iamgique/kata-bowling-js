@@ -1,7 +1,12 @@
-const KataFrame = require('../kata-frame');
+const { KataFrame } = require('../kata-frame');
+
+let frame;
+
+beforeEach(() => {
+    frame = new KataFrame();
+})
 
 it ('should return normal frame', () => {
-    let frame = new KataFrame();
     frame.firstCell(5);
     frame.secondCell(4);
     expect(frame.isNormal).toEqual(true);
@@ -10,7 +15,6 @@ it ('should return normal frame', () => {
 });
 
 it ('should return spare', () => {
-    let frame = new KataFrame();
     frame.firstCell(6);
     frame.secondCell(4);
     expect(frame.isSpare).toEqual(true);
@@ -19,7 +23,6 @@ it ('should return spare', () => {
 });
 
 it ('should return strike', () => {
-    let frame = new KataFrame();
     frame.firstCell(10);
     expect(frame.isStrike).toEqual(true);
     expect(frame.isSpare).toEqual(false);
@@ -27,9 +30,32 @@ it ('should return strike', () => {
 });
 
 it ('should return correct cell when added', () => {
-    let frame = new KataFrame();
     frame.add(6);
     frame.add(3);
     expect(frame.first).toEqual(6);
     expect(frame.second).toEqual(3);
 });
+
+it ('should return correct when roll complete', () => {
+    var frame = new KataFrame();
+    expect(frame.isComplete).toEqual(false);
+
+    frame = new KataFrame();
+    frame.add(3);
+    expect(frame.isComplete).toEqual(false);
+
+    frame = new KataFrame();
+    frame.add(10);
+    expect(frame.isComplete).toEqual(true);
+
+    frame = new KataFrame();
+    frame.add(6);
+    frame.add(3);
+    expect(frame.isComplete).toEqual(true);
+
+    frame = new KataFrame();
+    frame.add(6);
+    frame.add(4);
+    expect(frame.isComplete).toEqual(true);
+});
+
